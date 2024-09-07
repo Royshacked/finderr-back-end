@@ -41,6 +41,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 app.use('/api/gig', gigRoutes)
+app.use('/api/order', gigRoutes)
 
 setupSocketAPI(server)
 
