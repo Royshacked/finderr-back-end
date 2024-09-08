@@ -4,7 +4,6 @@ import { orderService } from './order.service.js'
 export async function getOrders(req, res) {
 	try {
 		const filterBy = {
-			title: req.query.title || '',
 			status: req.query.status || '',
 			sortField: req.query.sortField || '',
 			sortDir: req.query.sortDir || 1,

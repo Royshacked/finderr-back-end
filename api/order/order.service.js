@@ -134,8 +134,7 @@ async function removeOrderMsg(orderId, msgId) {
 function _buildCriteria(filterBy) {
 	console.log('ordercriteria')
 	const criteria = {
-		// title: { $regex: filterBy.title, $options: 'i' },
-		// status: { $regex: filterBy.status },
+		status: { $eq: filterBy.status },
 	}
 	return criteria
 }
