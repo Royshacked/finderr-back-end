@@ -24,7 +24,6 @@ async function query(filterBy) {
 		const sort = _buildSort(filterBy)
 		const collection = await dbService.getCollection('gig')
 		var gigCursor = await collection.find(criteria, { sort })
-		// console.log(gigCursor)
 
 		if (filterBy.pageIdx !== undefined) {
 			gigCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
@@ -87,7 +86,7 @@ async function add(gig) {
 }
 
 async function update(gig) {
-	const gigToSave = { vendor: gig.vendor, speed: gig.speed }
+	const gigToSave = { title: gig.title, price: gig.price }
 
 	try {
 		const criteria = { _id: ObjectId.createFromHexString(gig._id) }
@@ -139,12 +138,12 @@ function _buildCriteria(filterBy) {
 		daysToMake: { $lt: filterBy.daysToMake },
 	}
 
-	if (filterBy.owner.rate.length) {
-		filterBy.owner.rate = filterBy.owner.rate.map(item => +item)
-		criteria.owner = {
-			rate: { $elemMatch: filterBy.owner.rate }
-		}
-	}
+	// if (filterBy.owner.rate.length) {
+	// 	filterBy.owner.rate = filterBy.owner.rate.map(item => +item)
+	// 	criteria.owner = {
+	// 		rate: { $elemMatch: filterBy.owner.rate }
+	// 	}
+	// }
 	console.log(criteria)
 	return criteria
 }
