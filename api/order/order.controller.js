@@ -6,9 +6,10 @@ export async function getOrders(req, res) {
 		const filterBy = {
 			status: req.query.status || '',
 			sortField: req.query.sortField || '',
-			sortDir: req.query.sortDir || 1,
-			pageIdx: req.query.pageIdx || undefined,
+			sortDir: +req.query.sortDir || 1,
+			pageIdx: +req.query.pageIdx || undefined,
 		}
+
 
 		const orders = await orderService.query(filterBy)
 		res.json(orders)
