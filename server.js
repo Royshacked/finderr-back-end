@@ -8,6 +8,8 @@ import { authRoutes } from './api/auth/auth.routes.js'
 import { userRoutes } from './api/user/user.routes.js'
 import { reviewRoutes } from './api/review/review.routes.js'
 import { gigRoutes } from './api/gig/gig.routes.js'
+import { orderRoutes } from './api/order/order.routes.js'
+
 import { setupSocketAPI } from './services/socket.service.js'
 
 import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js'
@@ -41,7 +43,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 app.use('/api/gig', gigRoutes)
-app.use('/api/order', gigRoutes)
+app.use('/api/order', orderRoutes)
 
 setupSocketAPI(server)
 
