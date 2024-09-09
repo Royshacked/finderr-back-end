@@ -87,6 +87,8 @@ async function add(order) {
 }
 
 async function update(order) {
+	console.log(order);
+
 	const orderToSave = { title: order.title, status: order.status }
 
 	try {

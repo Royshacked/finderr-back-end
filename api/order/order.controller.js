@@ -3,11 +3,17 @@ import { orderService } from './order.service.js'
 
 export async function getOrders(req, res) {
 	try {
+		const { loggedinUser } = req
+		if (!loggedinUser) {
+			return
+
+		}
 		const filterBy = {
 			status: req.query.status || '',
 			sortField: req.query.sortField || '',
 			sortDir: +req.query.sortDir || 1,
 			pageIdx: +req.query.pageIdx || undefined,
+			user: loggedinUser._id
 		}
 
 
@@ -46,11 +52,14 @@ export async function addOrder(req, res) {
 export async function updateOrder(req, res) {
 	const { loggedinUser, body: order } = req
 	const { _id: userId, isAdmin } = loggedinUser
+	console.log(userId, isAdmin);
 
-	if (!isAdmin && order.owner._id !== userId) {
-		res.status(403).send('Not your order...')
-		return
-	}
+
+	// if (!isAdmin && order.seller._id !== userId) {
+	// 	res.status(403).send(`Not your order... you ${userId} and seller is 
+	// 		${seller._id}`)
+	// 	return
+	// }
 
 	try {
 		const updatedOrder = await orderService.update(order)
