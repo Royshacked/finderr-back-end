@@ -1,10 +1,13 @@
+import { asyncLocalStorage } from '../../services/als.service.js'
 import { logger } from '../../services/logger.service.js'
 import { orderService } from './order.service.js'
 
 export async function getOrders(req, res) {
+	const { loggedinUser } = asyncLocalStorage.getStore()
 	try {
 		const filterBy = {
 			status: req.query.status || '',
+			userId: loggedinUser._id
 		}
 
 		const orders = await orderService.query(filterBy)
