@@ -18,7 +18,7 @@ export const orderService = {
 }
 
 async function query(filterBy) {
-	console.log(filterBy)
+
 	try {
 		const criteria = _buildCriteria(filterBy)
 		const sort = _buildSort(filterBy)

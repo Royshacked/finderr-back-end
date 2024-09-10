@@ -18,7 +18,6 @@ export const gigService = {
 }
 
 async function query(filterBy) {
-	console.log(filterBy)
 	try {
 		const criteria = _buildCriteria(filterBy)
 		const sort = _buildSort(filterBy)
@@ -131,20 +130,27 @@ async function removeGigMsg(gigId, msgId) {
 }
 
 function _buildCriteria(filterBy) {
-	const criteria = {
+	let criteria = {
 		title: { $regex: filterBy.title, $options: 'i' },
 		tags: { $regex: filterBy.category },
 		price: { $lt: filterBy.budget },
 		daysToMake: { $lt: filterBy.daysToMake },
 	}
 
-	// if (filterBy.owner.rate.length) {
-	// 	filterBy.owner.rate = filterBy.owner.rate.map(item => +item)
+	// console.log(filterBy.owner.rate && filterBy.owner.rate.length > 0)
+	// if (filterBy.owner.rate && filterBy.owner.rate.length > 0) {
+
+
 	// 	criteria.owner = {
-	// 		rate: { $elemMatch: filterBy.owner.rate }
+	// 		rate: { $all: filterBy.owner.rate }
 	// 	}
+	// 	console.log('service criteria', criteria)
 	// }
-	console.log(criteria)
+
+	if (filterBy.owner.rate && filterBy.owner.rate.length > 0) {
+		criteria["owner.rate"] = { $in: filterBy.owner.rate.map(item => +item) }
+	}
+
 	return criteria
 }
 

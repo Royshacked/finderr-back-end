@@ -3,19 +3,9 @@ import { orderService } from './order.service.js'
 
 export async function getOrders(req, res) {
 	try {
-		const { loggedinUser } = req
-		if (!loggedinUser) {
-			return
-
-		}
 		const filterBy = {
 			status: req.query.status || '',
-			sortField: req.query.sortField || '',
-			sortDir: +req.query.sortDir || 1,
-			pageIdx: +req.query.pageIdx || undefined,
-			user: loggedinUser._id
 		}
-
 
 		const orders = await orderService.query(filterBy)
 		res.json(orders)

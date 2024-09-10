@@ -8,7 +8,7 @@ export async function getGigs(req, res) {
 			category: req.query.category || '',
 			owner: {
 				// level: req.query.owner.level || '',
-				// rate: req.query.owner.rate || [],
+				rate: req.query.owner.rate || [],
 				// language: req.query.owner.language || [],
 				// loc: req.query.owner.loc || [],
 			},
