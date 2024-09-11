@@ -7,16 +7,16 @@ export async function getGigs(req, res) {
 			title: req.query.title || '',
 			category: req.query.category || '',
 			owner: {
-				// level: req.query.owner.level || '',
+				level: req.query.owner.level || '',
 				rate: req.query.owner.rate || [],
-				// language: req.query.owner.language || [],
-				// loc: req.query.owner.loc || [],
+				language: req.query.owner.language || [],
+				loc: req.query.owner.loc || [],
 			},
 			budget: +req.query.budget || Infinity,
 			daysToMake: +req.query.daysToMake || Infinity,
-			sortField: req.query.sortField || '',
-			sortDir: req.query.sortDir || 1,
-			pageIdx: req.query.pageIdx || undefined,
+			// sortField: req.query.sortField || '',
+			// sortDir: req.query.sortDir || 1,
+			// pageIdx: req.query.pageIdx || undefined,
 		}
 
 		const gigs = await gigService.query(filterBy)

@@ -3,14 +3,14 @@
         "title": "I will fix wordpress, CSS, HTML, jquery, and PHP errors",
         "price": 826,
         "owner": {
-            "_id": "oRulYh",
-            "fullname": "Surjeet Singh",
+            "_id": "66dc27e55625e051ea884b4b",
+            "fullname": "roy",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/a7238c19ed67f1f2ff0a342a7dc53d91-1719205673921/17a08e08-1595-4b23-b95a-f71681c22c8a.jpg",
             "level": "basic",
-            "rate": 3
+            "rate": 3,
+            "language": "hebrew",
+            "loc": "Israel"
         },
-        "language": "hebrew",
-        "loc": "Israel",
         "daysToMake": 8,
         "description": "Is your WordPress site acting up? Don't worry, I'm here to help! With over 13 years of experience in WordPress theme and plugin development, I specialize in diagnosing and fixing any issues that may be plaguing your website. Whether it's a minor bug or a major glitch, I have the expertise to get your site back on track.",
         "avgResponseTime": 8,
@@ -26,14 +26,14 @@
         "title": "I will fix bugs errors from HTML, CSS, javascript, PHP, wordpress",
         "price": 79,
         "owner": {
-            "_id": "oRulYh",
-            "fullname": "Saurabh Chauhan",
+            "_id": "66dc27e55625e051ea884b4b",
+            "fullname": "roy",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/f5bbb58284bda105edb16f76a7e4521d-1623660993193/3a8d9cd3-f71d-4a87-bba3-70118594f220.jpg",
             "level": "pro",
-            "rate": 2
+            "rate": 3,
+            "language": "hebrew",
+            "loc": "Israel"
         },
-        "language": "Hindi",
-        "loc": "Canada",
         "daysToMake": 2,
         "description": "Facing issues with your WordPress site due to Plugins, Themes or Custom CSS/JS? Need help with Page builders, or custom page design? Or that small button is not working properly on mobile devices?",
         "avgResponseTime": 4,
@@ -49,14 +49,14 @@
         "title": "I will fix wordpress issues, wordpress bug fix, fix wordpress errors, css help",
         "price": 59,
         "owner": {
-            "_id": "oRulYh",
-            "fullname": "Daniyal",
+            "_id": "66dc27e55625e051ea884b4b",
+            "fullname": "roy",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/37ab3a8ed290253be052b96ebe249fd6-1135856321672684265.105363/E40E5D8D-BBF9-4288-9CBB-0BA9B690B4EB",
             "level": "basic",
-            "rate": 2
+            "rate": 3,
+            "language": "Hebrew",
+            "loc": "Israel"
         },
-        "language": "English",
-        "loc": "United States",
         "daysToMake": 2,
         "description": "Facing issues with your WordPress site due to Plugins, Themes or Custom CSS/JS? Need help with Page builders, or custom page design? Or that small button is not working properly on mobile devices?",
         "avgResponseTime": 4,
@@ -76,10 +76,10 @@
             "fullname": "Thextreme",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/2764717/original/fvlogo3.png",
             "level": "pro",
-            "rate": 3
+            "rate": 3,
+            "language": "English",
+            "loc": "United Kingdom"
         },
-        "language": "English",
-        "loc": "United Kingdom",
         "daysToMake": 5,
         "description": "",
         "avgResponseTime": 2,
@@ -99,10 +99,10 @@
             "fullname": "Star Works",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/443aec777aeefd6eb424d1b4fefe8d2a-1718043276281/c8dc061f-db78-4874-ba6c-9ad2e9d6241b.jpg",
             "level": "basic",
-            "rate": 4
+            "rate": 4,
+            "language": "Hindi",
+            "loc": "United States"
         },
-        "language": "Hindi",
-        "loc": "United States",
         "daysToMake": 1,
         "description": "Experienced team of designers and developers with 5+ years of expertise. Proficient in HTML, CSS, React, Next, Tailwind, Bootstrap, Firebase, Nodejs, MongoDB, and Strapi CMS. 450+ Figma designs transformed into impressive websites. Our passion for what we do drives us to wholeheartedly commit to every project, ensuring exceptional results. We highly value your time and look forward to creating something amazing together! Have a fantastic day ahead!",
         "avgResponseTime": 2,
@@ -122,10 +122,10 @@
             "fullname": "Ex.",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b39024b1d8cedf62568b0b39fb16dab7-1684972528939/6bf17195-a5ad-4907-971c-bc1e5bb42bbf.png",
             "level": "basic",
-            "rate": 1
+            "rate": 1,
+            "language": "Urdu",
+            "loc": "Canada"
         },
-        "language": "Urdu",
-        "loc": "Canada",
         "daysToMake": 5,
         "description": "Welcome to my CARTOON and MASCOT LOGO GIG: We are thrilled to assist you in designing a premium business mascot/cartoon logo that will help your brand jumpstart. We are excited to help you create the perfect logo for your social media platforms like YouTube, Facebook, Instagram, Snapchat, TikTok, etc. As we all know, social media has become an integral part of our daily lives, and having a captivating Business mascot logo can help your platforms make a lasting impression on your users. Whether you're looking to refresh your existing logo or create a new one from scratch, we're here to help you craft a design that will resonate with your audience and capture the essence of your brand.",
         "avgResponseTime": 1,
@@ -145,10 +145,10 @@
             "fullname": "Miriam G",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9a87452d97cfaa093a8fba055ebdb893-1704752601756/7d10b27c-1d0d-4732-9c22-397f3302f1af.jpeg",
             "level": "pro",
-            "rate": 3
+            "rate": 3,
+            "language": "English",
+            "loc": "United States"
         },
-        "language": "English",
-        "loc": "United States",
         "daysToMake": 2,
         "description": "Welcome to Uplance Media - Your ultimate partner in transforming your social media presence!",
         "avgResponseTime": 1,
@@ -168,10 +168,10 @@
             "fullname": "Dave",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/fb1a24beb0af465fbc0efecb875ae802-1718093731831/5b913e55-eef3-4d7c-a0ac-c0e925b31e21.png",
             "level": "basic",
-            "rate": 2
+            "rate": 2,
+            "language": "English",
+            "loc": "United States"
         },
-        "language": "English",
-        "loc": "United States",
         "daysToMake": 9,
         "description": "I can do 3D animation video as well as I can draw,sketch and design a custom 3D character or mascot for your brand or business.",
         "avgResponseTime": 2,

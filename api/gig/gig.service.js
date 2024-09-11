@@ -130,6 +130,7 @@ async function removeGigMsg(gigId, msgId) {
 }
 
 function _buildCriteria(filterBy) {
+	console.log(filterBy.budget)
 	let criteria = {
 		title: { $regex: filterBy.title, $options: 'i' },
 		tags: { $regex: filterBy.category },
@@ -137,18 +138,14 @@ function _buildCriteria(filterBy) {
 		daysToMake: { $lt: filterBy.daysToMake },
 	}
 
-	// console.log(filterBy.owner.rate && filterBy.owner.rate.length > 0)
-	// if (filterBy.owner.rate && filterBy.owner.rate.length > 0) {
-
-
-	// 	criteria.owner = {
-	// 		rate: { $all: filterBy.owner.rate }
-	// 	}
-	// 	console.log('service criteria', criteria)
-	// }
-
 	if (filterBy.owner.rate && filterBy.owner.rate.length > 0) {
 		criteria["owner.rate"] = { $in: filterBy.owner.rate.map(item => +item) }
+	}
+	if (filterBy.owner.loc && filterBy.owner.loc.length > 0) {
+		criteria["owner.loc"] = { $in: filterBy.owner.loc.map(item => item) }
+	}
+	if (filterBy.owner.language && filterBy.owner.language.length > 0) {
+		criteria["owner.language"] = { $in: filterBy.owner.language.map(item => item) }
 	}
 
 	return criteria
