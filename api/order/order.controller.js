@@ -6,7 +6,7 @@ export async function getOrders(req, res) {
 	const { loggedinUser } = asyncLocalStorage.getStore()
 	try {
 		const filterBy = {
-			status: req.query.status || '',
+			status: req.query.status || 'all',
 			userId: loggedinUser._id
 		}
 
@@ -31,7 +31,6 @@ export async function getOrderById(req, res) {
 
 export async function addOrder(req, res) {
 	const { loggedinUser, body: order } = req
-
 	try {
 		order.owner = loggedinUser
 		const addedOrder = await orderService.add(order)
