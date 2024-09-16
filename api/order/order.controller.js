@@ -7,7 +7,8 @@ export async function getOrders(req, res) {
 	try {
 		const filterBy = {
 			status: req.query.status || 'all',
-			userId: loggedinUser._id
+			userId: loggedinUser._id,
+			isSeller: loggedinUser.isSeller
 		}
 
 		const orders = await orderService.query(filterBy)
