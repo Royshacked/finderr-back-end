@@ -4,11 +4,12 @@ import { orderService } from './order.service.js'
 
 export async function getOrders(req, res) {
 	const { loggedinUser } = asyncLocalStorage.getStore()
+
 	try {
 		const filterBy = {
 			status: req.query.status || 'all',
 			userId: loggedinUser._id,
-			isSeller: loggedinUser.isSeller
+			isSeller: req.query.isSeller
 		}
 
 		const orders = await orderService.query(filterBy)
