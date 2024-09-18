@@ -135,7 +135,7 @@ async function removeOrderMsg(orderId, msgId) {
 
 function _buildCriteria(filterBy) {
 	let criteria = {}
-	console.log(filterBy)
+
 	if (filterBy.isSeller === 'true') {
 		criteria["seller.id"] = { $eq: filterBy.userId }
 	}
@@ -147,6 +147,7 @@ function _buildCriteria(filterBy) {
 	if (!filterBy.status || filterBy.status === 'all') return criteria
 
 	criteria["status"] = { $eq: filterBy.status }
+
 	return criteria
 }
 
