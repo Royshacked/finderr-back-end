@@ -130,7 +130,7 @@ async function removeGigMsg(gigId, msgId) {
 }
 
 function _buildCriteria(filterBy) {
-	console.log(filterBy.budget)
+
 	let criteria = {
 		title: { $regex: filterBy.title, $options: 'i' },
 		tags: { $regex: filterBy.category },

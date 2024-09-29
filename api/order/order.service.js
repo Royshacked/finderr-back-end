@@ -24,7 +24,6 @@ async function query(filterBy) {
 		const sort = _buildSort(filterBy)
 		const collection = await dbService.getCollection('order')
 		var orderCursor = await collection.find(criteria, { sort })
-		// console.log(orderCursor)
 
 		if (filterBy.pageIdx !== undefined) {
 			orderCursor.skip(filterBy.pageIdx * PAGE_SIZE).limit(PAGE_SIZE)
@@ -61,7 +60,7 @@ async function remove(orderId) {
 		const criteria = {
 			_id: ObjectId.createFromHexString(orderId),
 		}
-		if (!isAdmin) criteria['owner._id'] = ownerId
+		if (!isAdmin) criteria['buyer.id'] = ownerId
 
 		const collection = await dbService.getCollection('order')
 		const res = await collection.deleteOne(criteria)

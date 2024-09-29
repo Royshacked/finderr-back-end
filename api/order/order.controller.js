@@ -1,10 +1,10 @@
 import { asyncLocalStorage } from '../../services/als.service.js'
 import { logger } from '../../services/logger.service.js'
+import { socketService } from '../../services/socket.service.js'
 import { orderService } from './order.service.js'
 
 export async function getOrders(req, res) {
 	const { loggedinUser } = asyncLocalStorage.getStore()
-
 	try {
 		const filterBy = {
 			status: req.query.status || 'all',
@@ -33,9 +33,10 @@ export async function getOrderById(req, res) {
 
 export async function addOrder(req, res) {
 	const { loggedinUser, body: order } = req
+
 	try {
-		order.owner = loggedinUser
 		const addedOrder = await orderService.add(order)
+		socketService.emitToUser({ type: 'add-order', data: addedOrder, userId: order.seller.id })
 		res.json(addedOrder)
 	} catch (err) {
 		logger.error('Failed to add order', err)
@@ -46,8 +47,6 @@ export async function addOrder(req, res) {
 export async function updateOrder(req, res) {
 	const { loggedinUser, body: order } = req
 	const { _id: userId, isAdmin } = loggedinUser
-	console.log(userId, isAdmin);
-
 
 	// if (!isAdmin && order.seller._id !== userId) {
 	// 	res.status(403).send(`Not your order... you ${userId} and seller is 
@@ -57,6 +56,7 @@ export async function updateOrder(req, res) {
 
 	try {
 		const updatedOrder = await orderService.update(order)
+		socketService.emitToUser({ type: 'update-order', data: updatedOrder, userId: updatedOrder.buyer.id })
 		res.json(updatedOrder)
 	} catch (err) {
 		logger.error('Failed to update order', err)
@@ -67,8 +67,10 @@ export async function updateOrder(req, res) {
 export async function removeOrder(req, res) {
 	try {
 		const orderId = req.params.id
+		const removedOrder = await orderService.getById(orderId)
 		const removedId = await orderService.remove(orderId)
 
+		socketService.emitToUser({ type: 'remove-order', data: removedId, userId: removedOrder.seller.id })
 		res.send(removedId)
 	} catch (err) {
 		logger.error('Failed to remove order', err)
